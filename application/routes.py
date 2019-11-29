@@ -7,7 +7,8 @@ from application.forms import PostForm, Book_PostForm
 @app.route('/home')
 def home():
 	postData = Posts.query.all()
-	return render_template('home.html', title='Home', posts=postData)
+	postData1 = Book_Posts.query.all()
+	return render_template('home.html', title='Home', posts=postData1)
 
 @app.route('/about')
 def about():
@@ -34,10 +35,7 @@ def books():
 
         else:
                 print(form.errors)
-
-        postData = Book_Posts.query.all()
-        return render_template('books.html', title='Books', form=form, posts=postData)
-
+        return render_template('books.html', title='Books', form=form)
 
 @app.route('/reviews')
 def reviews():

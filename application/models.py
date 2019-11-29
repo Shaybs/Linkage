@@ -13,3 +13,17 @@ class Posts(db.Model):
 			'Title: ', self.title, '\r\n', self.content
 			])
 
+class Book_Posts(db.Model):
+        id = db.Column(db.Integer, primary_key=True)
+        book = db.Column(db.String(60), nullable=False, unique=True)
+        author = db.Column(db.String(100), nullable=False)
+        description = db.Column(db.String(250), nullable=False)
+        rating = db.Column(db.Integer)
+
+	def __repr__(self):
+		return ''.join([
+			'Book: ', self.book, '\r\n',
+			'Author: ', self.author
+			])
+
+        

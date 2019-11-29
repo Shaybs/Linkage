@@ -4,16 +4,16 @@
                 <form method="POST" action="">
                         {{ form.hidden_tag() }}
                         <div class="form-group">
-                                {{ form.first_name.label }}
-                                {% if form.first_name.errors %}
-                                        {{ form.first_name }}
+                                {{ form.book.label }}
+                                {% if form.book.errors %}
+                                        {{ form.book }}
                                         <div class="error">
-                                                {% for error in form.first_name.errors %}
+                                                {% for error in form.book.errors %}
                                                         <span>{{ error }}</span>
                                                 {% endfor %}
                                         </div>
                                 {% else %}
-                                                {{ form.first_name }}
+                                                {{ form.book }}
                                 {% endif %}
                         </div>
                         <br>
@@ -27,18 +27,21 @@
         <div class="form">
                 <form method="POST" action="">
                         {{ form.hidden_tag( )}}
-                        {{ form.first_name.label }}
-                        {{ form.first_name }}
+                        {{ form.book.label }}
+                        {{ form.book }}
                         <br>
-                        {{ form.last_name.label }}
-                        {{ form.last_name }}
+                        {{ form.author.label }}
+                        {{ form.author }}
                         <br>
-                        {{ form.title.label }}
+                        {{ form.decription.label }}
                         {{ form.title }}
                         <br>
-                        {{ form.content.label }}
-                        {{ form.content }}
+                        {{ form.description.label }}
+                        {{ form.description }}
                         <br>
+			{{ form.rating.label }}
+			{{ form.rating }}
+			<br>
                         {{ form.submit }}
                 </form>
         </div>

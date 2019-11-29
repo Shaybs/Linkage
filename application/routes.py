@@ -19,18 +19,18 @@ def about():
 
 @app.route('/books', methods=['GET', 'POST'])
 def books():
-        form = PostForm()
+        form = Book_PostForm()
         if form.validate_on_submit():
-                postData = Posts(
-                first_name=form.first_name.data,
-                last_name=form.last_name.data,
-                title=form.title.data,
-                content=form.content.data
+                postData = Book_Posts(
+                book=form.book.data,
+                author=form.author.data,
+                description=form.description.data,
+                rating=form.rating.data
         )
 
                 db.session.add(postData)
                 db.session.commit()
-                return redirect(url_for('home'))
+                return redirect(url_for('books'))
 
         else:
                 print(form.errors)
